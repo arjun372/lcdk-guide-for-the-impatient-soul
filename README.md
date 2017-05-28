@@ -1,1 +1,3 @@
-# lcdk-guide-for-the-impatient-soul
+# LCDK Guide for the impatient soul
+
+

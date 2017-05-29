@@ -1,5 +1,8 @@
 # LCDK Guide for the Impatient soul
 
+## TODO
+* [ ] System Overview
+* [x] µ-benchmark tutorial
 
 ## Brief System Overview
 

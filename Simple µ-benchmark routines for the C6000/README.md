@@ -2,7 +2,6 @@
 
 Included in the file `profiler.h` are helper functions that provide clock-cycle level timing accuracy which can be used for creating small and effective benchmarks when profiling LCDK code. Cycle count is independent of clock frequency and therefore a better metric for work-done than elapsed time.
 
-In addition to
 ## Usage Example
 
 ```c

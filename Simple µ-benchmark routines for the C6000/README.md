@@ -24,7 +24,7 @@ int main(void) {
 ```c
 MEASURING OVERHEAD   : 2 cycles
 CLOCKS PER SECOND    : 2000000 cycles
-TOTAL CLOCKS CYCLES  : 9274010 cycles
+TOTAL CLOCKS CYCLES  : 9274010 cycles // MEASURING OVERHEAD has been subtracted already
 ```
 
 ### Note on compiler optimization

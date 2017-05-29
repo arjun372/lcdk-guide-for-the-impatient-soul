@@ -9,11 +9,11 @@ Included in the file `profiler.h` are helper functions that provide clock-cycle 
 
 int main(void) {
 
-  clock_t start_time = getClock();
+  const clock_t start_time = getClock();
 
   function_to_run(); // DO SOME INTERESTING CALCULATIONS HERE
 
-  clock_t stop_time  = getClock();
+  const clock_t stop_time  = getClock();
 
   stats(stop_time, start_time);
 }

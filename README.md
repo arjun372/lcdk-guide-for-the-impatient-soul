@@ -1,8 +1,18 @@
 # LCDK Guide for the Impatient soul
 
-## TODO
+## TODO (*will vanish upon completion*)
 * [ ] System Overview
 * [x] µ-benchmark tutorial
+
+
+## Goals
+* Quick & easy introduction to DSP
+* Reproducibility
+* Groundwork for creating a collaborative toolkit, for EE113D folk
+* Exploring system capabilities & limitations
+* Sharing lessons learnt
+* Good design practices
+* Introduction to performance oriented design
 
 ## Brief System Overview
 

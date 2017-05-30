@@ -1,7 +1,19 @@
 # Optimizing Artificial Neural Nets with DSPLIB
 
 
+## TODO (*will vanish upon completion*)
+* [ ] System Overview
+* [ ] Training code for Host CPU
+* [ ] DSPLIB optimized Inference code for C6000
+* [ ] Additional activation functions [tanh, relu]
+* [ ] Dealing with memory/CPU tradeoff w.r.t. act. func/ eval. (look-up tbl vs math ops)
+* [ ] Performance Evaluation
+
+
 ## System Overview
+![OpType Performance](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Faster%20Math%20Ops%20using%20MATHLIB/charts/opTypes.png)
+
+<!-- ## System Overview
 ![Alt text](https://g.gravizo.com/svg?
   digraph train {
     rankdir=LR
@@ -24,4 +36,4 @@
       prediction [shape=diamond,style="filled", color="hotpink", fillcolor="gold", label="Prediction"]
     }
   }
-)
+) -->

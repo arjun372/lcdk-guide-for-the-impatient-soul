@@ -1,9 +1,11 @@
 # Performance oriented design on the LCDK
 
+*** Please refer to the individual folders above. ***
+
 ## TODO (*will vanish upon completion*)
 * [ ] System Overview
 * [x] µ-benchmark tutorial
-* [ ] Faster Math Ops with MATHLIB
+* [x] Faster Math Ops with MATHLIB
 * [ ] Efficient FFTs with DSPLIB
 * [ ] Optimizing Neural Nets using DSPLIB
 * [ ] Interfacing a 9-DOF over I2C
@@ -17,7 +19,7 @@
 * Exploring LCDK system capabilities & limitations
 * Sharing lessons learnt
 * Introduction to performance oriented design
-* Good design practices for low-memory, high-compute devices
+* Good design practices for low-memory, high-compute capability devices
 
 
 // ** IN PROGRESS **

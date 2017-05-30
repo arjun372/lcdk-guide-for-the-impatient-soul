@@ -37,10 +37,6 @@ int main(void) {
   sindp_v(arguments, sinusoids, N);
 
 }
-
-double *args = (double *) arguments;
-double *out = (double *) sinusoids;
-
 ```
 
 ### General Guidelines

@@ -11,7 +11,7 @@
 
 
 ## System Overview
-![OpType Performance](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Faster%20Math%20Ops%20using%20MATHLIB/charts/opTypes.png)
+![OpType Performance](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/blob/master/Optimized%20Neural%20Nets%20with%20DSPLIB/charts/overview.png)
 
 <!-- ## System Overview
 ![Alt text](https://g.gravizo.com/svg?

@@ -33,7 +33,7 @@ int main(void) {
   // initialize arguments to something meaningful here, init_args is trivially implemented elsewhere
   init_args(arguments, N);
 
-  // single - call vectorized operation, equivalent to sinusoids[i] = sin(arg[i]);
+  // single - call vectorized operation, equivalent to sinusoids[i] = sin(arg[i]) from 0 to N-1
   sindp_v(arguments, sinusoids, N);
 
 }

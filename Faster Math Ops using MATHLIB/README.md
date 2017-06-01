@@ -8,32 +8,34 @@
 * [ ] Effect of memory access latency
 
 ## Including MATHLIB
-MATHLIB is acquired under license from TI, and therefore cannot be provided freely here. It can be downloaded from TI's website after agreeing to their terms and conditions. 
+An latest installer version of MATHLIB can be downloaded from [download from TI's software product webpage](http://software-dl.ti.com/sdoemb/sdoemb_public_sw/mathlib/latest/index_FDS.html). Alternatively, this repository also provides sources for `release 3.1.2.1`, `Build date: 05182016`, and is known to be working with CCS compiler v8.2.
 
 
 ## Function Reference
-MATHLIB *(Release 3.0.1.1)* provides implementations to the functions listed below. Additional information can be found in the MATHLIB function reference file `MATHLIB_Reference.chm`, provided in this repo.
+MATHLIB *(Release 3.1.2.1)* provides both double precision and single precision implementations for the functions listed below. Additional information can be found in the MATHLIB function reference file `MATHLIB_Reference.chm`, provided in this repo.
 
-Here is a list of all modules:
+Here is a list of commonly used functions that MATHLIB provides efficient implementations for. **Note, this is not a list of function definitions**, (those can be found in the function reference file).
 ```c
-* double atan2dp(double a,  double b) : returns the arc tangent of a floating-point argument a/b. The return value is an angle in the range [-PI/2, PI/2] radians
-* Atandp  
-* Cosdp
-* Divdp
-* Exp10dp  
-* Exp2dp
-* Expdp
-* Log10dp  
-* Log2dp
-* Logdp
-* Powdp
-* Recipdp  
-* Rsqrtdp
-* Sindp
-* Sqrtdp  
+* atan2(a,b)
+* atan(a)
+* cos(a)
+* div(a,b)
+* exp10(a)  
+* exp2(a)
+* exp(a)
+* log10(a)  
+* log2(a)
+* log(a)
+* pow(a,b)
+* recip(a)  
+* rsqrt(a)
+* sin(a)
+* sqrt(a)
 ```
 
-### Example Code Usage
+### Vectorized Code :: Example Usage
+
+MATHLIB also exposes a vectorized implementation for every function listed above. In nearly every case, vectorized implementations will outperform code that iterates over arrays. In this sense, their use is highly recommended.
 
 ```c
 #include <ti/mathlib/mathlib.h>

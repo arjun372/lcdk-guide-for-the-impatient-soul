@@ -1,0 +1,323 @@
+******************************************************************************
+               TMS320C6x Linker PC v7.4.4                      
+******************************************************************************
+>> Linked Thu Jun 01 15:24:05 2017
+
+OUTPUT FILE NAME:   <MPU9250_I2C.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: c0002e00
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  CACHE_L2RAM           11800000   00040000  00000000  00040000  RWIX
+  CACHE_L1P             11e00000   00008000  00000000  00008000  RWIX
+  CACHE_L1D             11f00000   00008000  00000000  00008000  RWIX
+  L3RAM                 80000000   00020000  00000000  00020000  RWIX
+  SDRAM                 c0000000   08000000  000041a6  07ffbe5a  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.pinit     0    c0000000    00000000     UNINITIALIZED
+
+.data      0    c0000000    00000000     UNINITIALIZED
+
+.const     0    c0000000    00000000     UNINITIALIZED
+
+xdc.meta   0    c0000000    00000000     COPY SECTION
+
+.text      0    c0000000    00002f00     
+                  c0000000    00001aa0     interrupt.obj (.text:retain)
+                  c0001aa0    000005e0     interrupt.obj (.text)
+                  c0002080    00000540     i2c.obj (.text)
+                  c00025c0    00000280     i2cLedBlink.obj (.text)
+                  c0002840    000000c0     rts6740.lib : autoinit.obj (.text:__auto_init)
+                  c0002900    000000c0                 : divu.obj (.text:__divu)
+                  c00029c0    000000c0                 : exit.obj (.text:_exit)
+                  c0002a80    000000a0                 : cpy_tbl.obj (.text:_copy_in)
+                  c0002b20    000000a0                 : memcpy64.obj (.text:_memcpy)
+                  c0002bc0    00000040                 : args_main.obj (.text:__args_main)
+                  c0002c00    00000200     intvecs.obj (.text)
+                  c0002e00    00000080     rts6740.lib : boot.obj (.text:_c_int00)
+                  c0002e80    00000060                 : cpp_init.obj (.text:___TI_cpp_init)
+                  c0002ee0    00000020                 : exit.obj (.text:_abort)
+
+.stack     0    c0002f00    00001000     UNINITIALIZED
+                  c0002f00    00000008     rts6740.lib : boot.obj (.stack)
+                  c0002f08    00000ff8     --HOLE--
+
+.far       0    c0003f00    0000025a     UNINITIALIZED
+                  c0003f00    00000240     interrupt.obj (.far)
+                  c0004140    0000000c     rts6740.lib : exit.obj (.far)
+                  c000414c    00000004     --HOLE--
+                  c0004150    0000000a     i2cLedBlink.obj (.far)
+
+.cinit     0    c0004160    00000044     
+                  c0004160    0000002c     rts6740.lib : exit.obj (.cinit)
+                  c000418c    00000004     --HOLE-- [fill = 0]
+                  c0004190    0000000c     i2cLedBlink.obj (.cinit)
+                  c000419c    00000004     --HOLE-- [fill = 0]
+                  c00041a0    00000004     (.pad.cinit) [fill = 0]
+
+.neardata 
+*          0    c00041a4    00000000     UNINITIALIZED
+
+.rodata    0    c00041a4    00000000     UNINITIALIZED
+
+.bss       0    c00041a4    00000008     UNINITIALIZED
+                  c00041a4    00000008     i2cLedBlink.obj (.bss)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+c00041a4   $bss
+c00041a4   .bss
+ffffffff   .data
+ffffffff   .text
+c0002ee0   C$$EXIT
+c0001ef8   _ExcCombineAdd
+c0001f40   _ExcCombineRemove
+c0001ed8   _ExcGlobalEnable
+c0002590   _I2CDMARxEventDisable
+c0002548   _I2CDMARxEventEnable
+c000256c   _I2CDMATxEventDisable
+c0002524   _I2CDMATxEventEnable
+c000250c   _I2CDMATxRxEventDisable
+c00024d4   _I2CInterruptVectorGet
+c000266c   _I2CIsr
+c0002338   _I2CMasterBusBusy
+c0002384   _I2CMasterControl
+c0002450   _I2CMasterDataGet
+c000242c   _I2CMasterDataPut
+c00021ec   _I2CMasterDisable
+c00021b0   _I2CMasterEnable
+c0002404   _I2CMasterErr
+c0002110   _I2CMasterInitExpClk
+c00022f4   _I2CMasterIntClearEx
+c0002254   _I2CMasterIntDisableEx
+c000220c   _I2CMasterIntEnableEx
+c00022a0   _I2CMasterIntStatus
+c0002360   _I2CMasterIsBusy
+c0002324   _I2CMasterSlaveAddrSet
+c00023ac   _I2CMasterStart
+c00023cc   _I2CMasterStop
+c00024c0   _I2COwnAddressSet
+c0002080   _I2CPinMuxSetup
+c00024a8   _I2CSetDataCount
+c00024f0   _I2CSlaveAddressGet
+c000248c   _I2CSlaveDataGet
+c000246c   _I2CSlaveDataPut
+c000230c   _I2CSlaveIntClearEx
+c0002278   _I2CSlaveIntDisableEx
+c0002230   _I2CSlaveIntEnableEx
+c00022b8   _I2CSlaveIntStatus
+c00022d4   _I2CSlaveIntStatusEx
+c00023ec   _I2CStatusClear
+c0001aa0   _IntDSPINTCInit
+c0001e50   _IntDisable
+c0001e20   _IntEnable
+c0001c18   _IntEventClear
+c0001d54   _IntEventCombineAdd
+c0001c50   _IntEventCombineInit
+c0001df8   _IntEventCombineRegister
+c0001da8   _IntEventCombineRemove
+c0001b5c   _IntEventMap
+c0001be4   _IntEventSet
+c0001eac   _IntGlobalDisable
+c0001e98   _IntGlobalEnable
+c0001ec0   _IntGlobalRestore
+c0001b10   _IntRegister
+c0001e84   _IntReset
+c0001b34   _IntUnRegister
+c0003f00   __STACK_END
+00001000   __STACK_SIZE
+00000001   __TI_args_main
+c0002e80   ___TI_cpp_init
+c0004148   ___TI_enable_exit_profile_output
+ffffffff   ___TI_pprof_out_hndl
+ffffffff   ___TI_prof_data_size
+ffffffff   ___TI_prof_data_start
+ffffffff   ___binit__
+c00041a4   ___bss__
+ffffffff   ___c_args__
+c0004160   ___cinit__
+ffffffff   ___data__
+ffffffff   ___edata__
+c00041ac   ___end__
+ffffffff   ___etext__
+ffffffff   ___pinit__
+ffffffff   ___text__
+c0002bc0   __args_main
+c0002840   __auto_init
+c0002900   __c6xabi_divu
+c0004140   __cleanup_ptr
+c0002900   __divu
+c0004144   __dtors_ptr
+c0002f00   __stack
+c0002ee0   _abort
+00000200   _argsize
+c0000ff8   _c674x_mask_int10_isr
+c00011c0   _c674x_mask_int11_isr
+c0001384   _c674x_mask_int12_isr
+c0001548   _c674x_mask_int13_isr
+c0001710   _c674x_mask_int14_isr
+c00018d8   _c674x_mask_int15_isr
+c0000550   _c674x_mask_int4_isr
+c0000718   _c674x_mask_int5_isr
+c00008e0   _c674x_mask_int6_isr
+c0000aa4   _c674x_mask_int7_isr
+c0000c68   _c674x_mask_int8_isr
+c0000e30   _c674x_mask_int9_isr
+c0000000   _c674x_nmi_isr
+c00001c4   _c674x_rsvd_int2_isr
+c0000388   _c674x_rsvd_int3_isr
+c0002e00   _c_int00
+c0002a80   _copy_in
+c00041a4   _count
+c0004150   _dataToSlave
+c00029c0   _exit
+c00041a8   _flag
+c0002c00   _intcVectorTable
+c00025c0   _main
+c0002b20   _memcpy
+ffffffff   binit
+c0004160   cinit
+00000000   const_size
+c0000000   const_start
+ffffffff   edata
+c00041ac   end
+ffffffff   etext
+ffffffff   pinit
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   const_size
+00000001   __TI_args_main
+00000200   _argsize
+00001000   __STACK_SIZE
+c0000000   _c674x_nmi_isr
+c0000000   const_start
+c00001c4   _c674x_rsvd_int2_isr
+c0000388   _c674x_rsvd_int3_isr
+c0000550   _c674x_mask_int4_isr
+c0000718   _c674x_mask_int5_isr
+c00008e0   _c674x_mask_int6_isr
+c0000aa4   _c674x_mask_int7_isr
+c0000c68   _c674x_mask_int8_isr
+c0000e30   _c674x_mask_int9_isr
+c0000ff8   _c674x_mask_int10_isr
+c00011c0   _c674x_mask_int11_isr
+c0001384   _c674x_mask_int12_isr
+c0001548   _c674x_mask_int13_isr
+c0001710   _c674x_mask_int14_isr
+c00018d8   _c674x_mask_int15_isr
+c0001aa0   _IntDSPINTCInit
+c0001b10   _IntRegister
+c0001b34   _IntUnRegister
+c0001b5c   _IntEventMap
+c0001be4   _IntEventSet
+c0001c18   _IntEventClear
+c0001c50   _IntEventCombineInit
+c0001d54   _IntEventCombineAdd
+c0001da8   _IntEventCombineRemove
+c0001df8   _IntEventCombineRegister
+c0001e20   _IntEnable
+c0001e50   _IntDisable
+c0001e84   _IntReset
+c0001e98   _IntGlobalEnable
+c0001eac   _IntGlobalDisable
+c0001ec0   _IntGlobalRestore
+c0001ed8   _ExcGlobalEnable
+c0001ef8   _ExcCombineAdd
+c0001f40   _ExcCombineRemove
+c0002080   _I2CPinMuxSetup
+c0002110   _I2CMasterInitExpClk
+c00021b0   _I2CMasterEnable
+c00021ec   _I2CMasterDisable
+c000220c   _I2CMasterIntEnableEx
+c0002230   _I2CSlaveIntEnableEx
+c0002254   _I2CMasterIntDisableEx
+c0002278   _I2CSlaveIntDisableEx
+c00022a0   _I2CMasterIntStatus
+c00022b8   _I2CSlaveIntStatus
+c00022d4   _I2CSlaveIntStatusEx
+c00022f4   _I2CMasterIntClearEx
+c000230c   _I2CSlaveIntClearEx
+c0002324   _I2CMasterSlaveAddrSet
+c0002338   _I2CMasterBusBusy
+c0002360   _I2CMasterIsBusy
+c0002384   _I2CMasterControl
+c00023ac   _I2CMasterStart
+c00023cc   _I2CMasterStop
+c00023ec   _I2CStatusClear
+c0002404   _I2CMasterErr
+c000242c   _I2CMasterDataPut
+c0002450   _I2CMasterDataGet
+c000246c   _I2CSlaveDataPut
+c000248c   _I2CSlaveDataGet
+c00024a8   _I2CSetDataCount
+c00024c0   _I2COwnAddressSet
+c00024d4   _I2CInterruptVectorGet
+c00024f0   _I2CSlaveAddressGet
+c000250c   _I2CDMATxRxEventDisable
+c0002524   _I2CDMATxEventEnable
+c0002548   _I2CDMARxEventEnable
+c000256c   _I2CDMATxEventDisable
+c0002590   _I2CDMARxEventDisable
+c00025c0   _main
+c000266c   _I2CIsr
+c0002840   __auto_init
+c0002900   __c6xabi_divu
+c0002900   __divu
+c00029c0   _exit
+c0002a80   _copy_in
+c0002b20   _memcpy
+c0002bc0   __args_main
+c0002c00   _intcVectorTable
+c0002e00   _c_int00
+c0002e80   ___TI_cpp_init
+c0002ee0   C$$EXIT
+c0002ee0   _abort
+c0002f00   __stack
+c0003f00   __STACK_END
+c0004140   __cleanup_ptr
+c0004144   __dtors_ptr
+c0004148   ___TI_enable_exit_profile_output
+c0004150   _dataToSlave
+c0004160   ___cinit__
+c0004160   cinit
+c00041a4   $bss
+c00041a4   .bss
+c00041a4   ___bss__
+c00041a4   _count
+c00041a8   _flag
+c00041ac   ___end__
+c00041ac   end
+ffffffff   .data
+ffffffff   .text
+ffffffff   ___TI_pprof_out_hndl
+ffffffff   ___TI_prof_data_size
+ffffffff   ___TI_prof_data_start
+ffffffff   ___binit__
+ffffffff   ___c_args__
+ffffffff   ___data__
+ffffffff   ___edata__
+ffffffff   ___etext__
+ffffffff   ___pinit__
+ffffffff   ___text__
+ffffffff   binit
+ffffffff   edata
+ffffffff   etext
+ffffffff   pinit
+
+[118 symbols]

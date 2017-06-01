@@ -7,8 +7,31 @@
 * [ ] General Guidelines
 * [ ] Effect of memory access latency
 
+## Including MATHLIB
+MATHLIB is acquired under license from TI, and therefore cannot be provided freely here. It can be downloaded from TI's website after agreeing to their terms and conditions. 
 
-![OpType Performance](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Faster%20Math%20Ops%20using%20MATHLIB/charts/opTypes.png)
+
+## Function Reference
+MATHLIB *(Release 3.0.1.1)* provides implementations to the functions listed below. Additional information can be found in the MATHLIB function reference file `MATHLIB_Reference.chm`, provided in this repo.
+
+Here is a list of all modules:
+```c
+* double atan2dp(double a,  double b) : returns the arc tangent of a floating-point argument a/b. The return value is an angle in the range [-PI/2, PI/2] radians
+* Atandp  
+* Cosdp
+* Divdp
+* Exp10dp  
+* Exp2dp
+* Expdp
+* Log10dp  
+* Log2dp
+* Logdp
+* Powdp
+* Recipdp  
+* Rsqrtdp
+* Sindp
+* Sqrtdp  
+```
 
 ### Example Code Usage
 
@@ -38,6 +61,8 @@ int main(void) {
 
 }
 ```
+## Benchmarks
+![OpType Performance](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Faster%20Math%20Ops%20using%20MATHLIB/charts/opTypes.png)
 
 ### General Guidelines
 

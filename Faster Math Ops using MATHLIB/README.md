@@ -8,7 +8,7 @@
 * [x] Performance Benchmark
 
 ## Including MATHLIB
-An latest installer version of MATHLIB can be downloaded from [download from TI's software product webpage](http://software-dl.ti.com/sdoemb/sdoemb_public_sw/mathlib/latest/index_FDS.html). Alternatively, this repository also provides sources for `release 3.1.2.1`, `Build date: 05182016`, and is known to be working with CCS compiler v8.2.
+The latest installer version of MATHLIB can be downloaded from [download from TI's software product webpage](http://software-dl.ti.com/sdoemb/sdoemb_public_sw/mathlib/latest/index_FDS.html). Alternatively, this repository also provides sources for `release 3.1.2.1`, `Build date: 05182016`, and is known to be working with CCS compiler v8.2.
 
 
 ## Function Reference

@@ -3,9 +3,9 @@
 
 ## TODO (*will vanish upon completion*)
 * [ ] Brief Abstract
-* [ ] Example Code Usage
-* [ ] General Guidelines
-* [ ] Effect of memory access latency
+* [x] Installation Guide
+* [x] Example Code Usage
+* [x] Performance Benchmark
 
 ## Including MATHLIB
 An latest installer version of MATHLIB can be downloaded from [download from TI's software product webpage](http://software-dl.ti.com/sdoemb/sdoemb_public_sw/mathlib/latest/index_FDS.html). Alternatively, this repository also provides sources for `release 3.1.2.1`, `Build date: 05182016`, and is known to be working with CCS compiler v8.2.
@@ -63,9 +63,8 @@ int main(void) {
 
 }
 ```
-## Benchmarks
+## Performance Benchmarks
+Here is a performance benchmark that demonstrates the superiority of MATHLIB for most commonly used functions, especially when vectorized.
+
 ![OpType Performance](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Faster%20Math%20Ops%20using%20MATHLIB/charts/opTypes.png)
-
-### General Guidelines
-
-### Effect of memory access latency
+Note: the MATHLIB provided divide operation does not perform as well as the standard division operation (for C6000 compiler v8.2 atleast).  

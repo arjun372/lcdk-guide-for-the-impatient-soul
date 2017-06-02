@@ -3,7 +3,7 @@
 MATHLIB was designed with performance in mind, and as such, makes a trade-off between accuracy and execution speed. In terms of level of accuracy, not all functions are created equal, so be sure to inspect the input and output-error-tolerance ranges for each function in the function reference file `MATHLIB_Function_Reference.chm`.
 
 ## Installation Guide
-The latest installer version of MATHLIB can be downloaded from [TI's software product webpage](http://software-dl.ti.com/sdoemb/sdoemb_public_sw/mathlib/latest/index_FDS.html). Download the appropriate installer for your platform (Windows & Linux supported) and follow the instructions that the installer provides. Next, restart Code Composer Studio once the installation is complete, at which point CCS will auto-discover the newly installed library.
+The latest installer version of MATHLIB can be downloaded from <a  href="http://software-dl.ti.com/sdoemb/sdoemb_public_sw/mathlib/latest/index_FDS.html" target="_blank">TI's software product webpage</a>. Download the appropriate installer for your platform (Windows & Linux supported) and follow the instructions that the installer provides. Next, restart Code Composer Studio once the installation is complete, at which point CCS will auto-discover the newly installed library.
 
 Alternatively, this repository also provides sources for `release 3.1.2.1`, which can be found in folder named `mathlib_c674x_3_1_2_1`.
 
@@ -85,7 +85,8 @@ int main(void) {
 }
 ```
 ## Performance Benchmarks
-As a performance comparison, I wrote some benchmarks that compare MATHLIB with TI compiler provided `math.h` files. I've included all the source code needed to re-create this benchmark in this repo. In addition, raw-output values for this benchmark can be found in [this Google Sheets ](https://docs.google.com/spreadsheets/d/1LWCkFIS9CJ5wdWN-qmfmCOh9VeTmIPtO3nftIYkhErU/edit?usp=sharing)document.
+As a performance comparison, I wrote some benchmarks that compare MATHLIB with TI compiler provided `math.h` files. I've included all the source code needed to re-create this benchmark in this repo. In addition, raw-output values for this benchmark can be found in <a  href="https://docs.google.com/spreadsheets/d/1LWCkFIS9CJ5wdWN-qmfmCOh9VeTmIPtO3nftIYkhErU/edit?usp=sharing" target="_blank">this Google Sheets</a> document.
+
 
 ![OpType Performance](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Faster%20Math%20Ops%20using%20MATHLIB/charts/opTypes.png)
 *Note: the MATHLIB provided divide operation does not perform as well as the standard division operation (for C6000 compiler v8.2 atleast)*.  

@@ -52,29 +52,29 @@ MATHLIB also exposes a vectorized implementation for every function listed above
 
 #define N 1024
 
-extern void init_angles(double *args, const size_t N);
+extern void init_args(double *angles, const size_t len);
 
 int main(void) {
 
   size_t i;
   double angles[N] = {0};
 
-  // initialize arguments to something meaningful here, init_angles is trivially implemented elsewhere
-  init_args(arguments, N);
+  // initialize angles to something meaningful here, init_args is trivially implemented elsewhere
+  init_args(angles, N);
 
-  // standard implementation of MATHLIB sindp (dp stands for double precision)
+  // typical usage for MATHLIB sindp (dp: double precision)
   double sin_arr[N] = {0};
-  for(i=0; i<N; i++)
+  for(i = 0; i < N; i++)
   {
     sin_arr[i] = sindp(angles[i]);
   }
 
-  // single-call vectorized operation, equivalent to sin_vec[i] = sin(angles[i]) from 0 to N-1
+  // single-call vectorized operation, equivalent to for-loop above, just faster
   double sin_vec[N] = {0};
   sindp_v(angles, sin_vec, N);
 
   // do a quick sanity check here
-  for(i=0; i<N; i++)
+  for(i = 0; i < N; i++)
   {
     if(sin_arr[i] != sin_vec[i])
     {

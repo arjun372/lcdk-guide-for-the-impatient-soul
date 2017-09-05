@@ -5,13 +5,20 @@ The latest installer version of DSPLIB can be downloaded from <a  href="http://s
 
 Alternatively, this repository also provides sources for `release 3.4.0.0`, which can be found in folder named `dsplib_c674x_3_4_0_0`.
 
-### Including & Linking DSPLIB
+#### Including & Linking DSPLIB
 Regardless of whether or not it was installed using the installer binary (above), DSPLIB can be trivially added to any C/C++ project on any platform as long as all the source files and statically linked libraries are provided at compile-time.
 
 1. Add `dsplib_c674x_3_4_0_0/packages` to INCLUDE PATH
 2. Add file `dsplib_c674x_3_4_0_0/packages/ti/dsplib/lib/dsplib.lib` to LINKER PATH
 
-### Example Usage & Walk Through
+## Function reference
+
+#### DSPF_sp_fftSPxSP
+![FFT Ref](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Efficient%20FFTs%20with%20DSPLIB/charts/fft.png)
+
+#### DSPF_sp_ifftSPxSP
+![IFFT Ref](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Efficient%20FFTs%20with%20DSPLIB/charts/ifft.png)
+## Example Usage & Walk Through
 
 We can use the provided libraries
 MATHLIB also exposes a vectorized implementation for every function listed above. In nearly every case, vectorized implementations will outperform code that iterates over arrays. In this sense, their use is highly recommended.

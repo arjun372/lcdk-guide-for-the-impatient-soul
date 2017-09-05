@@ -1,0 +1,302 @@
+******************************************************************************
+               TMS320C6x Linker Unix v8.2.0                    
+******************************************************************************
+>> Linked Tue Sep  5 09:38:02 2017
+
+OUTPUT FILE NAME:   <DSPLIB_FFT.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 800047a0
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  DSPL2ROM              00700000   00100000  00000000  00100000  RWIX
+  DSPL2RAM              00800000   00040000  00000000  00040000  RWIX
+  DSPL1PRAM             00e00000   00008000  00000000  00008000  RWIX
+  DSPL1DRAM             00f00000   00008000  00000000  00008000  RWIX
+  SHDSPL2ROM            11700000   00100000  00000000  00100000  RWIX
+  SHDSPL2RAM            11800000   00040000  00000000  00040000  RWIX
+  SHDSPL1PRAM           11e00000   00008000  00000000  00008000  RWIX
+  SHDSPL1DRAM           11f00000   00008000  00000000  00008000  RWIX
+  EMIFACS0              40000000   20000000  00000000  20000000  RWIX
+  EMIFACS2              60000000   02000000  00000000  02000000  RWIX
+  EMIFACS3              62000000   02000000  00000000  02000000  RWIX
+  EMIFACS4              64000000   02000000  00000000  02000000  RWIX
+  EMIFACS5              66000000   02000000  00000000  02000000  RWIX
+  SHRAM                 80000000   00020000  0000534c  0001acb4  RWIX
+  DDR2                  c0000000   20000000  00000000  20000000  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+80000000    80000000    00002800   00000000    rw-
+  80000000    80000000    00002800   00000000    rw- .far
+80002800    80002800    000021c0   000021c0    r-x
+  80002800    80002800    000021c0   000021c0    r-x .text
+800049c0    800049c0    000008cc   00000000    rw-
+  800049c0    800049c0    00000800   00000000    rw- .stack
+  800051c0    800051c0    000000cc   00000000    rw- .fardata
+80005290    80005290    000000c0   000000c0    r--
+  80005290    80005290    000000c0   000000c0    r-- .cinit
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.text      0    80002800    000021c0     
+                  80002800    000005c0     rts6740_elf.lib : divd.obj (.text:__c6xabi_divd)
+                  80002dc0    00000580     main.obj (.text)
+                  80003340    000003a0     dsplib.ae674 : DSPF_sp_fftSPxSP.oe674 (.text:optimized)
+                  800036e0    00000320     rts6740_elf.lib : cos.obj (.text:cos)
+                  80003a00    000002e0                     : sin.obj (.text:sin)
+                  80003ce0    000002a0                     : divf.obj (.text:__c6xabi_divf)
+                  80003f80    00000160                     : autoinit.obj (.text:_auto_init_elf)
+                  800040e0    00000160                     : copy_decompress_lzss.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  80004240    00000100                     : cpy_tbl.obj (.text:copy_in)
+                  80004340    000000e0                     : exit.obj (.text:exit)
+                  80004420    000000e0                     : memset.obj (.text:memset)
+                  80004500    000000c0                     : tls.obj (.text:tls:init:__TI_tls_init)
+                  800045c0    000000a0                     : round.obj (.text:__c6xabi_nround)
+                  80004660    000000a0                     : memcpy64.obj (.text:memcpy)
+                  80004700    000000a0                     : modf.obj (.text:modf)
+                  800047a0    00000080                     : boot.obj (.text:_c_int00)
+                  80004820    00000060                     : llshift.obj (.text:__c6xabi_llshru)
+                  80004880    00000040                     : frcmpyd_div.obj (.text:__TI_frcmpyd_div)
+                  800048c0    00000040                     : args_main.obj (.text:_args_main)
+                  80004900    00000020                     : trunc.obj (.text:__c6xabi_trunc)
+                  80004920    00000020                     : startup.obj (.text:_system_post_cinit)
+                  80004940    00000020                     : pre_init.obj (.text:_system_pre_init)
+                  80004960    00000020                     : exit.obj (.text:abort)
+                  80004980    00000020                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  800049a0    00000020                     : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+
+.stack     0    800049c0    00000800     UNINITIALIZED
+                  800049c0    00000008     rts6740_elf.lib : boot.obj (.stack)
+                  800049c8    000007f8     --HOLE--
+
+.far       0    80000000    00002800     UNINITIALIZED
+                  80000000    00000800     (.common:w_sp)
+                  80000800    00000800     (.common:x_ref)
+                  80001000    00000800     (.common:x_sp)
+                  80001800    00000800     (.common:y_sp)
+                  80002000    00000400     (.common:y_imag_sp)
+                  80002400    00000400     (.common:y_real_sp)
+
+.cinit     0    80005290    000000c0     
+                  80005290    00000098     (.cinit..fardata.load) [load image, compression = lzss]
+                  80005328    0000000c     (__TI_handler_table)
+                  80005334    00000008     (.cinit..far.load) [load image, compression = zero_init]
+                  8000533c    00000004     --HOLE-- [fill = 0]
+                  80005340    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    80000000    00000000     UNINITIALIZED
+
+.fardata   0    800051c0    000000cc     UNINITIALIZED
+                  800051c0    00000040     rts6740_elf.lib : cos.obj (.fardata:R$1)
+                  80005200    00000040                     : sin.obj (.fardata:R$1)
+                  80005240    00000040     main.obj (.fardata:brev)
+                  80005280    0000000c     rts6740_elf.lib : exit.obj (.fardata)
+
+MODULE SUMMARY
+
+       Module                     code   ro data   rw data
+       ------                     ----   -------   -------
+    ./
+       main.obj                   1408   0         10304  
+    +--+--------------------------+------+---------+---------+
+       Total:                     1408   0         10304  
+                                                          
+    /opt/ti/ccsv7/tools/compiler/ti-cgt-c6000_8.2.0/lib/rts6740_elf.lib
+       divd.obj                   1472   0         0      
+       cos.obj                    800    0         64     
+       sin.obj                    736    0         64     
+       divf.obj                   672    0         0      
+       autoinit.obj               352    0         0      
+       copy_decompress_lzss.obj   352    0         0      
+       exit.obj                   256    0         12     
+       cpy_tbl.obj                256    0         0      
+       memset.obj                 224    0         0      
+       tls.obj                    192    0         0      
+       memcpy64.obj               160    0         0      
+       modf.obj                   160    0         0      
+       round.obj                  160    0         0      
+       boot.obj                   128    0         0      
+       llshift.obj                96     0         0      
+       args_main.obj              64     0         0      
+       frcmpyd_div.obj            64     0         0      
+       copy_decompress_none.obj   32     0         0      
+       copy_zero_init.obj         32     0         0      
+       pre_init.obj               32     0         0      
+       startup.obj                32     0         0      
+       trunc.obj                  32     0         0      
+    +--+--------------------------+------+---------+---------+
+       Total:                     6304   0         140    
+                                                          
+    /opt/ti/dsplib_c674x_3_4_0_0/packages/ti/dsplib/lib/dsplib.ae674
+       DSPF_sp_fftSPxSP.oe674     928    0         0      
+    +--+--------------------------+------+---------+---------+
+       Total:                     928    0         0      
+                                                          
+       Stack:                     0      0         2048   
+       Linker Generated:          0      188       0      
+    +--+--------------------------+------+---------+---------+
+       Grand Total:               8640   188       12492  
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 80005340 records: 2, size/record: 8, table size: 16
+	.fardata: load addr=80005290, load size=00000098 bytes, run addr=800051c0, run size=000000cc bytes, compression=lzss
+	.far: load addr=80005334, load size=00000008 bytes, run addr=80000000, run size=00002800 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 80005328 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_lzss
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                           
+-------   ----                           
+80004960  C$$EXIT                        
+80003340  DSPF_sp_fftSPxSP               
+80005340  __TI_CINIT_Base                
+80005350  __TI_CINIT_Limit               
+80005328  __TI_Handler_Table_Base        
+80005334  __TI_Handler_Table_Limit       
+UNDEFED   __TI_INITARRAY_Base            
+UNDEFED   __TI_INITARRAY_Limit           
+800051c0  __TI_STACK_END                 
+00000800  __TI_STACK_SIZE                
+00000000  __TI_STATIC_BASE               
+UNDEFED   __TI_TLS_INIT_Base             
+UNDEFED   __TI_TLS_INIT_Limit            
+80005280  __TI_cleanup_ptr               
+800040e0  __TI_decompress_lzss           
+800049a0  __TI_decompress_none           
+80005284  __TI_dtors_ptr                 
+80005288  __TI_enable_exit_profile_output
+80004880  __TI_frcmpyd_div               
+ffffffff  __TI_pprof_out_hndl            
+ffffffff  __TI_prof_data_size            
+ffffffff  __TI_prof_data_start           
+80004500  __TI_tls_init                  
+80004980  __TI_zero_init                 
+ffffffff  __binit__                      
+80002800  __c6xabi_divd                  
+80003ce0  __c6xabi_divf                  
+80004820  __c6xabi_llshru                
+800045c0  __c6xabi_nround                
+800045c0  __c6xabi_roundl                
+80004900  __c6xabi_trunc                 
+80004900  __c6xabi_truncl                
+ffffffff  __c_args__                     
+800048c0  _args_main                     
+80003f80  _auto_init_elf                 
+800047a0  _c_int00                       
+800049c0  _stack                         
+80004920  _system_post_cinit             
+80004940  _system_pre_init               
+80004960  abort                          
+ffffffff  binit                          
+80005240  brev                           
+80004240  copy_in                        
+800036e0  cos                            
+800036e0  cosl                           
+80004340  exit                           
+80003080  gen_twiddle_fft_sp             
+80002dc0  generateInput                  
+800032c8  main                           
+80004660  memcpy                         
+80004420  memset                         
+80004700  modf                           
+80004700  modfl                          
+80002fec  seperateRealImg                
+80003a00  sin                            
+80003a00  sinl                           
+80000000  w_sp                           
+80000800  x_ref                          
+80001000  x_sp                           
+80002000  y_imag_sp                      
+80002400  y_real_sp                      
+80001800  y_sp                           
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                           
+-------   ----                           
+00000000  __TI_STATIC_BASE               
+00000800  __TI_STACK_SIZE                
+80000000  w_sp                           
+80000800  x_ref                          
+80001000  x_sp                           
+80001800  y_sp                           
+80002000  y_imag_sp                      
+80002400  y_real_sp                      
+80002800  __c6xabi_divd                  
+80002dc0  generateInput                  
+80002fec  seperateRealImg                
+80003080  gen_twiddle_fft_sp             
+800032c8  main                           
+80003340  DSPF_sp_fftSPxSP               
+800036e0  cos                            
+800036e0  cosl                           
+80003a00  sin                            
+80003a00  sinl                           
+80003ce0  __c6xabi_divf                  
+80003f80  _auto_init_elf                 
+800040e0  __TI_decompress_lzss           
+80004240  copy_in                        
+80004340  exit                           
+80004420  memset                         
+80004500  __TI_tls_init                  
+800045c0  __c6xabi_nround                
+800045c0  __c6xabi_roundl                
+80004660  memcpy                         
+80004700  modf                           
+80004700  modfl                          
+800047a0  _c_int00                       
+80004820  __c6xabi_llshru                
+80004880  __TI_frcmpyd_div               
+800048c0  _args_main                     
+80004900  __c6xabi_trunc                 
+80004900  __c6xabi_truncl                
+80004920  _system_post_cinit             
+80004940  _system_pre_init               
+80004960  C$$EXIT                        
+80004960  abort                          
+80004980  __TI_zero_init                 
+800049a0  __TI_decompress_none           
+800049c0  _stack                         
+800051c0  __TI_STACK_END                 
+80005240  brev                           
+80005280  __TI_cleanup_ptr               
+80005284  __TI_dtors_ptr                 
+80005288  __TI_enable_exit_profile_output
+80005328  __TI_Handler_Table_Base        
+80005334  __TI_Handler_Table_Limit       
+80005340  __TI_CINIT_Base                
+80005350  __TI_CINIT_Limit               
+ffffffff  __TI_pprof_out_hndl            
+ffffffff  __TI_prof_data_size            
+ffffffff  __TI_prof_data_start           
+ffffffff  __binit__                      
+ffffffff  __c_args__                     
+ffffffff  binit                          
+UNDEFED   __TI_INITARRAY_Base            
+UNDEFED   __TI_INITARRAY_Limit           
+UNDEFED   __TI_TLS_INIT_Base             
+UNDEFED   __TI_TLS_INIT_Limit            
+
+[62 symbols]

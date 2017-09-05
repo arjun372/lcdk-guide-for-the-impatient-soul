@@ -13,20 +13,25 @@ Regardless of whether or not it was installed using the installer binary (above)
 
 ## Function reference
 
-#### DSPF_sp_fftSPxSP
+## DSPF_sp_fftSPxSP
 ![FFT Ref](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Efficient%20FFTs%20with%20DSPLIB/charts/fft.png)
 
-#### DSPF_sp_ifftSPxSP
+## DSPF_sp_ifftSPxSP
 ![IFFT Ref](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Efficient%20FFTs%20with%20DSPLIB/charts/ifft.png)
+
+### Limitations
+* The input array size (N) should be a power of 2
+* The input array size (N) should be between 8 <= N <= 65536
+
 ## Example Usage & Walk Through
 
 We can use the provided libraries
 MATHLIB also exposes a vectorized implementation for every function listed above. In nearly every case, vectorized implementations will outperform code that iterates over arrays. In this sense, their use is highly recommended.
 
 ```c
-/* don't forget to include "ti/mathlib/lib/mathlib.lib" under ::
+/* don't forget to include "ti/dspliblib/lib/dsplib.lib" under ::
 *
-*   C6000 Linker > File Search Options > "ti/mathlib/lib/mathlib.lib"
+*   C6000 Linker > File Search Options > "ti/dsplib/lib/dsplib.lib"
 *
 */
 #include <stdint.h>
@@ -34,8 +39,10 @@ MATHLIB also exposes a vectorized implementation for every function listed above
 #include <ti/dsplib/dsplib.h>
 
 /* Global definitions */
+
 /* Number of samples for which FFT needs to be calculated */
 #define N 256
+
 /* Number of unique sine waves in input data */
 #define NUM_SIN_WAVES 4
 
@@ -175,19 +182,13 @@ void main () {
 
     /* Call the test code to seperate the real and imaginary data */
     seperateRealImg ();
+
+    /* Call the inverse FFT routine */
+    DSPF_sp_ifftSPxSP(N, y_sp, w_sp, x_sp, brev, 4, 0, N);
 }
 
 ```
-
-## Limitations
-
-Assumptions:
-N needs to be power of 2
-8 <= N <= 131072
-Arrays pointed by ptr_x, ptr_w, and ptr_y should not overlap
-Arrays pointed by ptr_x, ptr_w, and ptr_y should align on the double words boundary
-
 ## Performance Benchmarks
-As a performance comparison, I wrote some benchmarks that compare MATHLIB with TI compiler provided `math.h` files. I've included all the source code needed to re-create this benchmark in this repo. In addition, raw-output values for this benchmark can be found in <a  href="https://docs.google.com/spreadsheets/d/1LWCkFIS9CJ5wdWN-qmfmCOh9VeTmIPtO3nftIYkhErU/edit?usp=sharing" target="_blank">this Google Sheets</a> document.
+As a performance comparison, I wrote some benchmarks that compare DSPF_sp_fftSPxSP with provided `fft.h, fft.c` files. Raw output values for this benchmark can be found in <a  href="https://docs.google.com/spreadsheets/d/19zp0zNIWIVdUwIUC8MQjfzUXdx-3uTuYXghs_FtrsoY/edit?usp=sharing" target="_blank">this Google Sheets</a> document.
 
 ![OpType Performance](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Efficient%20FFTs%20with%20DSPLIB/charts/chart.png)

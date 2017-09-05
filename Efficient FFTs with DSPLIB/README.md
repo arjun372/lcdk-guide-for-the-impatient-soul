@@ -222,5 +222,5 @@ Arrays pointed by ptr_x, ptr_w, and ptr_y should align on the double words bound
 As a performance comparison, I wrote some benchmarks that compare MATHLIB with TI compiler provided `math.h` files. I've included all the source code needed to re-create this benchmark in this repo. In addition, raw-output values for this benchmark can be found in <a  href="https://docs.google.com/spreadsheets/d/1LWCkFIS9CJ5wdWN-qmfmCOh9VeTmIPtO3nftIYkhErU/edit?usp=sharing" target="_blank">this Google Sheets</a> document.
 
 
-![OpType Performance](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Faster%20Math%20Ops%20using%20MATHLIB/charts/opTypes.png)
+![OpType Performance](https://github.com/arjun372/lcdk-guide-for-the-impatient-soul/raw/master/Efficient%20FFTs%20with%20DSPLIB/charts/chart.png)
 *Note: the MATHLIB provided divide operation does not perform as well as the standard division operation (for C6000 compiler v8.2 atleast)*.  

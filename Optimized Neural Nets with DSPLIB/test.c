@@ -35,7 +35,7 @@ void basic() {
     genann *ann = genann_init(1, 0, 0, 1);
 
     lequal(ann->total_weights, 2);
-    double a;
+    float a;
 
 
     a = 0;
@@ -89,8 +89,8 @@ void xor() {
     ann->weight[8] = -1;
 
 
-    double input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
-    double output[4] = {0, 1, 1, 0};
+    float input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
+    float output[4] = {0, 1, 1, 0};
 
     lfequal(output[0], *genann_run(ann, input[0]));
     lfequal(output[1], *genann_run(ann, input[1]));
@@ -104,13 +104,13 @@ void xor() {
 void backprop() {
     genann *ann = genann_init(1, 0, 0, 1);
 
-    double input, output;
+    float input, output;
     input = .5;
     output = 1;
 
-    double first_try = *genann_run(ann, &input);
+    float first_try = *genann_run(ann, &input);
     genann_train(ann, &input, &output, .5);
-    double second_try = *genann_run(ann, &input);
+    float second_try = *genann_run(ann, &input);
     lok(fabs(first_try - output) > fabs(second_try - output));
 
     genann_free(ann);
@@ -118,8 +118,8 @@ void backprop() {
 
 
 void train_and() {
-    double input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
-    double output[4] = {0, 0, 0, 1};
+    float input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
+    float output[4] = {0, 0, 0, 1};
 
     genann *ann = genann_init(2, 0, 0, 1);
 
@@ -142,8 +142,8 @@ void train_and() {
 
 
 void train_or() {
-    double input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
-    double output[4] = {0, 1, 1, 1};
+    float input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
+    float output[4] = {0, 1, 1, 1};
 
     genann *ann = genann_init(2, 0, 0, 1);
     genann_randomize(ann);
@@ -168,8 +168,8 @@ void train_or() {
 
 
 void train_xor() {
-    double input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
-    double output[4] = {0, 1, 1, 0};
+    float input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
+    float output[4] = {0, 1, 1, 0};
 
     genann *ann = genann_init(2, 1, 2, 1);
 
@@ -243,9 +243,9 @@ void copy() {
 
 
 void sigmoid() {
-    double i = -20;
-    const double max = 20;
-    const double d = .0001;
+    float i = -20;
+    const float max = 20;
+    const float d = .0001;
 
     while (i < max) {
         lfequal(genann_act_sigmoid(i), genann_act_sigmoid_cached(i));

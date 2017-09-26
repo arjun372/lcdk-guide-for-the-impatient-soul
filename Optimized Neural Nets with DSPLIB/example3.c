@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-
     /* Input data for the XOR function. */
     const double input[4][2] = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
 

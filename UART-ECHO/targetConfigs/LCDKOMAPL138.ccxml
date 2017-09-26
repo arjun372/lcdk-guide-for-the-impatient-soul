@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations XML_version="1.2" id="configurations_0">
+    <configuration XML_version="1.2" id="configuration_0">
+        <instance XML_version="1.2" desc="Texas Instruments XDS100v2 USB Debug Probe" href="connections/TIXDS100v2_Connection.xml" id="Texas Instruments XDS100v2 USB Debug Probe" xml="TIXDS100v2_Connection.xml" xmlpath="connections"/>
+        <connection XML_version="1.2" id="Texas Instruments XDS100v2 USB Debug Probe">
+            <instance XML_version="1.2" href="drivers/tixds100v2icepick_c.xml" id="drivers" xml="tixds100v2icepick_c.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/tixds100v2c674x.xml" id="drivers" xml="tixds100v2c674x.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/tixds100v2pru.xml" id="drivers" xml="tixds100v2pru.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/tixds100v2arm9.xml" id="drivers" xml="tixds100v2arm9.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/tixds100v2etb11.xml" id="drivers" xml="tixds100v2etb11.xml" xmlpath="drivers"/>
+            <property Type="choicelist" Value="3" id="The JTAG TCLK Frequency (MHz)"/>
+            <platform XML_version="1.2" id="platform_0">
+                <instance XML_version="1.2" desc="LCDKOMAPL138" href="boards/lcdkomapl138.xml" id="LCDKOMAPL138" xml="lcdkomapl138.xml" xmlpath="boards"/>
+            <board XML_version="1.2" description="Texas Instruments OMAP-L138 Low Cost Development Kit" id="LCDKOMAPL138">
+                    <device HW_revision="1" XML_version="1.2" description="OMAP-L138 SoC" id="OMAPL138_0" partnum="OMAPL138" simulation="no">
+                        <router HW_revision="" XML_version="1.2" description="" id="device_0" isa="ICEPICK_C">
+                            <subpath id="device_1">
+                                <cpu HW_revision="" XML_version="1.2" description="" deviceSim="false" id="device_2" isa="TMS320C674X">
+                                    <property Type="filepathfield" Value="../../emulation/boards/lcdkomapl138/gel/OMAP-L138_LCDK.gel" id="GEL File"/>
+                                <property Type="stringfield" Value="Auto" id="Domain Power Loss Mode"/>
+                                </cpu>
+                            </subpath>
+                        </router>
+                    </device>
+                </board>
+            </platform>
+        </connection>
+    </configuration>
+</configurations>

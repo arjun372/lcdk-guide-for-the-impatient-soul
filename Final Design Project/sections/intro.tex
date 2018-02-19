@@ -1,0 +1,20 @@
+
+\section{Introduction}
+
+%% History :: Integrated information from different sources to approach the design with a global view
+\subsection{History}
+For the better part of this decade, traditional consumer-grade DSP devices have provided end-node capability to cloud services, having played the role of data-acquisition agents or telecommunication systems. But as this landscape changes with the advent of the Internet of Things (IoT), the role of DSP systems will again be redefined as they adapt to the newer constraints that IoT imposes. Faster compute capability and a tighter energy budget, coupled with the need for ubiquitous connectivity and self-agency are already pushing\cite{lite} system and application developers to move out of the cloud and back into the users' pocket. For DSP systems to remain relevant in this latent landscape, there is an urgent need to bring state-of-the-art capabilities to the domain of traditional digital signal processing. This paper discusses the implementation of few such technologies that aim to make the LCDK platform faster, better connected and more intelligent. This goal has been subdivided into three categories, each of which will be individually addressed throughout the length of the paper. These categories have been selected based on the most urgent needs today, which include a need for better optimized \emph{Compute Performance}, fast, reliable and redundant \emph{Communication Protocols}, and a sophisticated machine learning approach through \emph{Deep Neural Networks}. 
+
+%% Sources :: Integrated information from different sources to approach the design with a global view
+
+
+%% Global Constraints :: Applies engineering and/or scientific principles correctly and appropriately in the design process 
+\subsection{Global Constraints}
+\subsubsection{Deep Neural Network}
+For a fully connected network (implemented here), memory and storage consumption and increases by $O(n\textsuperscript{2})$ for n additional neurons per layer, where each neuron-weight is stored as a 32-bit float. Although with 128MB DDR2 RAM, approximately 2\textsuperscript{25} weights can be stored in memory, system performance begins to suffer due to page-faults and L2 (256KB, 2\textsuperscript{16} weights) cache-misses. In addition, the initial transfer overhead for larger model sizes is much larger due to low throughput on the FT232 emulator/connector.\\
+
+\subsubsection{Communication Protocols}
+The primary limitation here is hardware-dependant. Since the LCDK multiplexes various channels and protocols through the same I/O controller, simultaneous use of I\textsuperscript{2}C and GPIO is not possible. In addition, GPIO functionality is implemented in software using bit-banging, which makes the system CPU bound and susceptible to errors or undefined behavior caused due to interruption of interrupt-intolerant code. Next, since I\textsuperscript{2}C is a short-distance communication protocol, using cables longer than $15cm$ for high-speed (1000Kbit/s) data transfer renders the system useless due to noise over the transmission line. This issue can be solved by introducing pull up resistors and capacitors on the bus, but may be undesirable due to increased system complexity.\\
+
+\subsubsection{Compute Performance}
+While the use of external libraries such as DSPLIB, MATHLIB and the GNU Scientific Library (GSL) is convenient and effortless in many ways, it is also the introduction of foreign code within the developers' work-space. As such, the burden of responsibility falls upon the developer for keeping up-to-date with community discovered bugs, updates and known issues. Fortunately, all libraries used here are actively maintained and new issues are discovered and fixed regularly. Further information can be found on the community web-page\cite{known_issues}.
